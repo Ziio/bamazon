@@ -51,7 +51,7 @@ connection.connect(function(err) {
       console.log("ID: " + res[i].id + " | Item: " + res[i].item + " | Department: " + res[i].department + " | Price: " + res[i].price + " | Stock: " + res[i].stock + " |" );
     }
       console.log("------------------------------------------------------------------");
-      // startBid();
+
 
       inquirer.prompt([
         {
@@ -92,35 +92,3 @@ connection.connect(function(err) {
     });
   }
 
-
-// .then(function(answer) {
-//   startBid();
-// });
-
-  // }
-
-
-  // function startBid() {
-  //       inquirer
-  //   .prompt({
-  //     name: "action",
-  //     type: "input",
-  //     message: "What item would you like to bid on?",
-  //     choices: [
-  //       "hi",
-  //       "goodbye",
-  //     ]
-  //   })
-
-
-  // .then(function(answer) {
-  //   switch (answer.action) {
-  //     case "hi":
-  //     bidItem();
-  //         break;
-  //     case "Post an item.":
-  //     postItem();
-  //         break;
-  //   }
-  // });
-  // }
