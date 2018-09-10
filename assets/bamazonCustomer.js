@@ -71,17 +71,18 @@ connection.connect(function(err) {
       .then(function(answer){
         var itemId = answer.itemId;
         var quantity = answer.quantity;
+        var itemPrice = answer.itemId.price;
 
 
         if (answer.quantity <= 0) {
-          console.log("You bought 0 of this item");
+          console.log("Insufficient quantity!");
           runStore();
         }
         else{
-          console.log("Item ID: " + itemId + " purchased.");
+          console.log("Item ID: |" + itemId + "| purchased. x" + quantity + " = total of: $" + itemPrice);
           connection.query (
             "UPDATE products SET stock = stock - ? WHERE id = ?",
-            [quantity, itemId], function(err, res) {
+            [quantity, itemId, itemPrice], function(err, res) {
               console.log("Purchase made.");
               runStore();
             }
